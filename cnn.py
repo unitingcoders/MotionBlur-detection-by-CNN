@@ -22,7 +22,7 @@ from keras.layers.convolutional import MaxPooling2D
 from keras.layers.convolutional import Convolution2D
 from keras.utils import np_utils
 from keras import backend as k
-
+import keras
 k.set_image_dim_ordering('th')
 
 seed = 7
@@ -135,7 +135,7 @@ early_stopping=callbacks.EarlyStopping(monitor='val_loss', min_delta=0, patience
 checkpoint = callbacks.ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
 
 # tensorboard callback
-tensorboard_callback = k.callbacks.TensorBoard(log_dir='./logs', histogram_freq=0, batch_size=32, write_graph=True, write_grads=False, write_images=False, embeddings_freq=0, embeddings_layer_names=None, embeddings_metadata=None)
+tensorboard_callback = keras.callbacks.TensorBoard(log_dir='./logs', histogram_freq=0, batch_size=32, write_graph=True, write_grads=False, write_images=False, embeddings_freq=0, embeddings_layer_names=None, embeddings_metadata=None)
 
 callbacks_list = [csv_log,early_stopping,checkpoint, tensorboard_callback]
 
