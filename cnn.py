@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 from keras.constraints import maxnorm
 from keras.preprocessing.image import ImageDataGenerator, load_img, img_to_array
 from matplotlib import pyplot
-from scipy.misc import toimage
+# from scipy.misc import toimage
 from keras.models import Sequential
 from keras.layers import Dropout
 from keras import callbacks
